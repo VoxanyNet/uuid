@@ -82,6 +82,9 @@ atomic = ["dep:atomic"]
 
 borsh = ["dep:borsh", "dep:borsh-derive"]
 
+[dependencies]
+diff-struct = {version = "0.5.3", optional = true}
+
 # Public: Used in trait impls on `Uuid`
 [dependencies.bytemuck]
 version = "1.16.0"

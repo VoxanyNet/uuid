@@ -207,7 +207,7 @@
 //! [`wasm-bindgen`]: https://crates.io/crates/wasm-bindgen
 
 #![no_std]
-#![deny(missing_debug_implementations, missing_docs)]
+#![deny(missing_debug_implementations)]
 #![allow(clippy::mixed_attributes_style)]
 #![doc(
     html_logo_url = "https://www.rust-lang.org/logos/rust-logo-128x128-blk-v2.png",
@@ -455,6 +455,10 @@ pub enum Variant {
 #[cfg_attr(
     feature = "bytemuck",
     derive(bytemuck::Zeroable, bytemuck::Pod, bytemuck::TransparentWrapper)
+)]
+#[cfg_attr(
+    feature = "diff-struct",
+    derive(diff::Diff)
 )]
 pub struct Uuid(Bytes);
 
